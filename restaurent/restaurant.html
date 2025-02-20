@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website Homepage</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eceff1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #2c3e50;
+        }
+        .table-container, .specialties-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 80%;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        img {
+            width: 100px;
+            height: 80px;
+            border-radius: 5px;
+        }
+        select {
+            font-size: 16px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        .cuisine-list {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 50%;
+            text-align: left;
+            display: none;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <h1>Restaurant Website Homepage</h1>
+
+    <div class="table-container" id="menu">
+        <h2>Menu</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dish Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fried Rice</td>
+                    <td>₹200</td>
+                    <td>Indian</td>
+                    <td><img src="https://imgs.search.brave.com/xG-h9FQvDQxrbGTRqU0ZqQlplz8PIRvyyhqU94nW5rA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTgw/ODQ5ODM5L3Bob3Rv/L2NhbnRvbmVzZS1y/aWNlLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1LT3FGa3g5/RThQLTgtLV96M3Rv/dWxHaDlIY0ctWG5j/X01kRWxHekVBTGZj/PQ" alt="Fried Rice"></td>
+                </tr>
+                <tr>
+                    <td>Pasta</td>
+                    <td>₹200</td>
+                    <td>Italian</td>
+                    <td><img src="https://imgs.search.brave.com/iZpb6CtNSqzyneqBpqtuVbsgmgFoLJ2-4PNjXWMlXp0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjA1/Mzg0MTIzL3Bob3Rv/L3Bhc3RhLXdpdGgt/cGVzdG8tYW5kLXNo/cmVkZGVkLWNoaWNr/ZW4uanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPTRqQVlpNlAx/YWExMXludFh0SWh5/MERjTzJTUEhkSjZH/cmIxMFBuTG51NGs9" alt="Pasta"></td>
+               </tr>
+                <tr>
+                    <td>Pizza</td>
+                    <td>₹350</td>
+                    <td>Italian</td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg" alt="Pizza"></td>
+                </tr>
+                <tr>
+                    <td>Burger</td>
+                    <td>₹150</td>
+                    <td>Fast Food</td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/6/62/NCI_Visuals_Food_Hamburger.jpg" alt="Burger"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="specialties-container">
+        <h2>Restaurant Specialties</h2>
+        <label for="cuisine">Select Cuisine:</label>
+        <select id="cuisine" onchange="show()">
+            <option value="">Select Your Cuisine</option>
+            <option value="italian">Italian</option>
+            <option value="indian">Indian</option>
+            <option value="chinese">Chinese</option>
+            <option value="mexican">Mexican</option>
+        </select>
+    </div>
+
+    <div class="cuisine-list" id="italian">
+        <h3>Italian Dishes</h3>
+        <ul>
+            <li>Pasta - 200/-</li>
+            <li>Pizza - 300/-</li>
+            <li>Risotto - 300/-</li>
+        </ul>
+    </div>
+
+    <div class="cuisine-list" id="indian">
+        <h3>Indian Dishes</h3>
+        <ul>
+            <li>Fried Rice - 200/-</li>
+            <li>Paneer Butter Masala - 250/-</li>
+            <li>Dal Tadka - 180/-</li>
+        </ul>
+    </div>
+
+    <div class="cuisine-list" id="chinese">
+        <h3>Chinese Dishes</h3>
+        <ul>
+            <li>Chow Mein - 220/-</li>
+            <li>Spring Rolls - 150/-</li>
+            <li>Sweet & Sour Chicken - 280/-</li>
+        </ul>
+    </div>
+
+    <div class="cuisine-list" id="mexican">
+        <h3>Mexican Dishes</h3>
+        <ul>
+            <li>Tacos - 250/-</li>
+            <li>Quesadilla - 300/-</li>
+            <li>Nachos - 180/-</li>
+        </ul>
+    </div>
+
+    <script>
+        function show() {
+            var selected=document.getElementById("cuisine").value;
+            var cuisineList=document.getElementsByClassName("cuisine-list");
+            
+            for(var i=0; i<cuisineList.length; i++){
+                cuisineList[i].style.display="none";
+            }
+            
+            if(selected){
+                document.getElementById(selected).style.display="block";
+            }
+        }
+    </script>
+
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2025 Your Restaurant. All Rights Reserved.</p>
+        <p>Contact us at: <a href="mailto:info@yourrestaurant.com">info@yourrestaurant.com</a></p>
+        <p>Follow us on:
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+        </p>
+    </div>
+
+</body>
+</html>
