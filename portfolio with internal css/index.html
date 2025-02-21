@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 850px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2, h3 {
+            color: #222;
+        }
+        p {
+            line-height: 1.8;
+            color: #444;
+        }
+        .section {
+            margin-bottom: 20px;
+            text-align: left;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e0e0e0;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        ul li:hover {
+            background: #d0d0d0;
+            transform: scale(1.05);
+        }
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 15px;
+            border: 4px solid #007bff;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            background: #007bff;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .contact-links a:hover {
+            background: #0056b3;
+        }
+        input[type="file"] {
+            padding: 8px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>My Portfolio</h2>
+        <div class="section">
+            <h3>Self Introduction</h3>
+            <p>Hello! I'm <b>Gayathri</b>, a passionate developer. I love solving complex problems and building user-friendly applications.</p>
+        </div>
+        <div class="section">
+            <h3>Skills</h3>
+            <ul>
+                <li>Java</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React & Node.js</li>
+                <li>SQL</li>
+                <li>Cloud Computing (AWS)</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Projects / Work Experience</h3>
+            <ul>
+                <li><a href="https://github.com/example/project1" target="_blank">Project 1 - AI Chatbot</a></li>
+                <li><a href="https://github.com/example/project2" target="_blank">Project 2 - E-Commerce Website</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Feedback & Achievements</h3>
+            <p>Won 1st place in Hackathon 2024.</p>
+        </div>
+        <div class="section">
+            <h3>Education</h3>
+            <p>Bachelor's in Computer Science, KMIT (2022 - 2026)</p>
+        </div>
+        <div class="section">
+            <h3>Contact Information</h3>
+            <p>Email: <a href="mailto:gaya3m@example.com">gaya3m@example.com</a></p>
+            <p>Phone: +91 9876543210</p>
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/gaya3-m" target="_blank">LinkedIn</a>
+                <a href="https://github.com/gaya3-m" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Upload your profile picture</h3>
+            <input type="file" id="upload" accept="image/jpeg" onchange="previewImage()">
+            <p id="error-message" class="error"></p>
+            <img id="profile-preview" class="profile-img" src="" alt="Profile Image" style="display:none;">
+        </div>
+    </div>
+    <script>
+        function previewImage() {
+            const input = document.getElementById("upload");
+            const errorMessage = document.getElementById("error-message");
+            const preview = document.getElementById("profile-preview");
+            const file = input.files[0];
+            if (file) {
+                if (file.type === "image/jpeg") {
+                    errorMessage.innerHTML = "";
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.src = e.target.result;
+                        preview.style.display = "block";
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    errorMessage.innerHTML = "Only JPEG format is allowed!";
+                    input.value = "";
+                    preview.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
